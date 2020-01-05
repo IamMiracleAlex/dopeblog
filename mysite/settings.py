@@ -122,11 +122,6 @@ MEDIA_URL = '/media/'
 
 # INTERNAL_IPS = ['127.0.0.1', '0.0.0.0']
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'collinsalex50@gmail.com'
-EMAIL_HOST_PASSWORD = '19264180'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
 
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
