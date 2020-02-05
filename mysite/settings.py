@@ -4,7 +4,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = ')@t3co!!_mray^!%1n@3th0$&9s8a2k2*2!xxnr2mq^$vkjvd1'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -54,22 +54,29 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+if settings.DEBUG:
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dopeblogdb',
-        'USER': 'postgres',
-        'PASSWORD': 'miracle',
-        'HOST': 'localhost'
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'dopeblogdb',
+            'USER': 'postgres',
+            'PASSWORD': 'miracle',
+            'HOST': 'localhost'
+        }
     }
-}
+
+else:
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'dopeblogdb',
+            'USER': 'postgres',
+            'PASSWORD': '12345678',
+            'HOST': '35.192.97.36'
+        }
+    }
 
 
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
