@@ -6,7 +6,7 @@ SECRET_KEY = ')@t3co!!_mray^!%1n@3th0$&9s8a2k2*2!xxnr2mq^$vkjvd1'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -129,7 +129,7 @@ MESSAGE_TAGS = {
 }
 
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass    
+# try:
+#     from .local_settings import *
+# except ImportError:
+#     pass    
