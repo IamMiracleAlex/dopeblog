@@ -73,9 +73,9 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'dopeblogdb',
-            'USER': 'postgres',
-            'PASSWORD': '12345678',
-            'HOST': '35.192.97.36',
+            'USER': 'miracle',
+            'PASSWORD': 'miracle',
+            'HOST': 'localhost',
             'PORT': '5432'
         }
     }

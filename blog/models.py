@@ -1,9 +1,13 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.urls import reverse
 from taggit.managers import TaggableManager
 
+
+
+class User(AbstractUser):
+    pass
 
 # class PublishedManager(models.Manager):    # creating custom manager
 #     def get_queryset(self):
