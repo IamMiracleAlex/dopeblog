@@ -5,7 +5,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = ')@t3co!!_mray^!%1n@3th0$&9s8a2k2*2!xxnr2mq^$vkjvd1'
 
-DEBUG = False
+DEBUG = True
 
 ADMINS = [('Miracle', 'collinsalex50@gmail.com')]
 
