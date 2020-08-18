@@ -51,7 +51,7 @@
                         <a href="{{ post.get_absolute_url }}"> {{ post.title }} </a>
                         </h3>
                         <p> 
-                        {{ post.body|markdown|truncatewords_html:20 }}
+                        {{ post.body|safe|truncatewords_html:20 }}
                          </p>
 
                         <!--Tags-->
@@ -95,16 +95,19 @@
         <aside class="col-lg-12 widget-author widget widget-with-posts post">
                 <div class="widget-author-inner row">
                     <div class="author-avatar row">
-                        <a href="#"><img src="{% static 'images/author1.jpg' %}" alt="" class="img-circle">
-                        </a>
+                        {% comment %} <a href="#">
+                        </a> {% endcomment %}
+                        <img width='100%' height='auto' src="{% static 'images/author4.jpg' %}" alt="" class="img-circle">
                     </div>
                     <a href="#"><h2 class="author-name">Miracle Alex</h2></a>
                     <h5 class="author-title">Software Developer</h5>
-                    <p>The word nature is derived from the Latin word natura, or "essential qualities, innate disposition", and in ancient times, literally meant "birth".</p>
+                    <p>I'm a mission-driven software developer with experience in
+                        enterprise and high-performance web technologies. A
+                        fullstack developer but favours backend development.</p>
                     <a href="https://github.com/mirakul1" class="know-more">know more</a>
                 </div>
                 <ul class="nav social-nav">
-                    <li><a href="https://twitter.com/mirakul_1"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://twitter.com/iammiraclealex"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="https://linkedin.com/in/mirakul1"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="https://github.com/mirakul1"><i class="fa fa-github"></i></a></li>
                     <li><a href="https://instagram.com/mirakul_1"><i class="fa fa-instagram"></i></a></li>

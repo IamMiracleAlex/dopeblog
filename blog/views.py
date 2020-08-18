@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from taggit.models import Tag
 from django.db.models import Count
 from django.contrib import messages
-from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
+# from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
 
 def index(request, tag_slug=None):
@@ -100,6 +100,21 @@ def subscribe(request):
         return redirect('blog:index')
 
 
+# def search(request):
+#     results = []
+#     query = None
+    
+#     if 'query' in request.GET:
+#         query = request.GET['query']
+
+#         search_vector = SearchVector('title', 'body')
+#         search_query = SearchQuery(query)
+#         results = Post.objects.annotate(search=search_vector, rank=SearchRank                                         (search_vector, search_query)).filter                                             (search=search_query).order_by('-rank')
+
+#     return render(request, 'blog/search.html', {'search_value': request.GET,
+#                                                 'query': query, 'results': results})
+
+
 def search(request):
     results = []
     query = None
@@ -107,12 +122,9 @@ def search(request):
     if 'query' in request.GET:
         query = request.GET['query']
 
-        search_vector = SearchVector('title', 'body')
-        search_query = SearchQuery(query)
-        results = Post.objects.annotate(search=search_vector, rank=SearchRank                                         (search_vector, search_query)).filter                                             (search=search_query).order_by('-rank')
-
-    return render(request, 'blog/search.html', {'search_value': request.GET,
-                                                'query': query, 'results': results})
+        results = Post.objects.filter(title__icontains=query)
+    return render(request, 'blog/search.html', {'query': query,
+                                            'results': results})
 
 
 def about(request):

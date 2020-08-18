@@ -1,5 +1,6 @@
 from django import forms
-from .models import Comment
+from .models import Comment, Post
+from ckeditor.widgets import CKEditorWidget
 
 
 class EmailPostForm(forms.Form):
@@ -28,3 +29,9 @@ class CommentForm(forms.ModelForm):
         #     'body': Textarea(attrs={'class': 'form-control', 'placeholder': 'Text'}),
         # }
         
+
+class PostAdminForm(forms.ModelForm):
+    body = forms.CharField(widget=CKEditorWidget())
+    class Meta:
+        model = Post
+        fields = '__all__'        
