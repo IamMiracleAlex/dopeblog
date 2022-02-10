@@ -1,4 +1,4 @@
-Django==2.2.8
+Django==2.2.27
 django-taggit==1.2.0
 psycopg2_binary==2.8.4
 pytz==2019.3
